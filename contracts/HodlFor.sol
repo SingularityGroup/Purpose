@@ -55,7 +55,7 @@ contract HodlFor is Ownable {
 
     // get tokens from creator to this contract
     purpose.safeTransferFrom(_creator, this, _value);
-    
+
     // hodl tokens
     hodler.hodl(_id, _value, _months);
 

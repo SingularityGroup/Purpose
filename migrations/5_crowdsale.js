@@ -22,6 +22,12 @@ const start = async (deployer, network, accounts) => {
     purposeWeiRate,
     etherWeiRate
   );
+  console.log("Transfering ownership to the Wallet address...");
+  await crowdsale.transferOwnership(keys.wallet, {
+      from: owner
+    })
+    .then(console.log)
+    .catch(console.log);
 };
 
 module.exports = start;

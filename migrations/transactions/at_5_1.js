@@ -5,6 +5,7 @@ const interact = Interact(networkName);
 const { Eth, eth, contracts, provider } = interact;
 
 (async () => {
+  console.log(typeof (interact));
   const keys = Keys(networkName);
   const { Eth, eth, contracts, provider } = interact;
   const { Purpose, DUBI, Hodler, Crowdsale } = contracts;

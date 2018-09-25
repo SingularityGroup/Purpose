@@ -9,10 +9,10 @@ const Deploy = (deployer, network) => async (contract, ...args) => {
   const deployed = contract.at(contract.address);
 
   const filePath = `${path.join(buildPath, `addresses-${network}`)}.json`;
-  const file = require(filePath);
-  file[deployed.constructor.contractName] = deployed.address;
+  const contracts = require(filePath);
+  contracts[deployed.constructor.contractName] = deployed.address;
 
-  fs.writeFileSync(filePath, JSON.stringify(file, null, 2));
+  fs.writeFileSync(filePath, JSON.stringify(contracts, null, 2));
 
   return deployed;
 };

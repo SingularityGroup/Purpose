@@ -9,6 +9,8 @@ const start = async (deployer, network, accounts) => {
   const deploy = Deploy(deployer, network);
   const [owner] = accounts;
 
+  const contracts = require(`../build/addresses-${network}.json`);
+
   // --> deploy dubi
   const dubi = await deploy(DUBI);
 };

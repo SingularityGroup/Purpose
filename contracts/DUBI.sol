@@ -29,7 +29,7 @@ contract DUBI is StandardToken, BurnableToken, RBAC {
     // logs
     MintLog(_to, _amount);
     Transfer(0x0, _to, _amount);
-    
+
     return true;
   }
 }
